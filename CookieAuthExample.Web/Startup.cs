@@ -11,8 +11,6 @@ namespace CookieAuthExample.Web
 {
     public class Startup
     {
-         public const string CookieScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -25,8 +23,8 @@ namespace CookieAuthExample.Web
         {
             services.AddMvc();
 
-            services.AddAuthentication(CookieScheme)
-                .AddCookie(CookieScheme, options => 
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options => 
                 {
                     options.LoginPath = "/Account/Login";
                     options.LogoutPath = "/Account/Logout";
