@@ -53,7 +53,7 @@ namespace CookieAuthExample.Web.Controllers
                 }
             }
 
-            TempData["Error"] = "Either username of password is incorrect";
+            TempData["Error"] = "Either username or password is incorrect";
 
             return RedirectToAction("Login");
         }
